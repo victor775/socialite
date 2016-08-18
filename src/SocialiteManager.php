@@ -55,6 +55,21 @@ class SocialiteManager extends Manager implements Contracts\Factory
      *
      * @return \Laravel\Socialite\Two\AbstractProvider
      */
+    protected function createAccountkitDriver()
+    {
+        $config = $this->app['config']['services.accountkit'];
+
+        return $this->buildProvider(
+            'Laravel\Socialite\Two\AccountkitProvider', $config
+        );
+    }
+
+
+    /**
+     * Create an instance of the specified driver.
+     *
+     * @return \Laravel\Socialite\Two\AbstractProvider
+     */
     protected function createGoogleDriver()
     {
         $config = $this->app['config']['services.google'];
