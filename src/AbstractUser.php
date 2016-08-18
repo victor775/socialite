@@ -7,6 +7,13 @@ use ArrayAccess;
 abstract class AbstractUser implements ArrayAccess, Contracts\User
 {
     /**
+     * Service name
+     *
+     * @var mixed
+     */
+    public $service;
+
+    /**
      * The unique identifier for the user.
      *
      * @var mixed
@@ -33,6 +40,13 @@ abstract class AbstractUser implements ArrayAccess, Contracts\User
      * @var string
      */
     public $email;
+
+    /**
+     * The user's phone
+     *
+     * @var string
+     */
+    public $phone;
 
     /**
      * The user's avatar image URL.

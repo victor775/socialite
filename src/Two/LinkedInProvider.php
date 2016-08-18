@@ -85,7 +85,7 @@ class LinkedInProvider extends AbstractProvider implements ProviderInterface
         return (new User)->setRaw($user)->map([
             'id' => $user['id'], 'nickname' => null, 'name' => Arr::get($user, 'formattedName'),
             'email' => Arr::get($user, 'emailAddress'), 'avatar' => Arr::get($user, 'pictureUrl'),
-            'avatar_original' => Arr::get($user, 'pictureUrls.values.0'),
+            'avatar_original' => Arr::get($user, 'pictureUrls.values.0'), 'service' => 'linkedin',
         ]);
     }
 
